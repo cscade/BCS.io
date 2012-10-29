@@ -354,38 +354,32 @@ MooTools 1.4.5
 BCSi
 */
 !function () {
-	
-var BCSi, context;
-	
-/*
-Create BCSi object
-*/
-BCSi = function () {};
-	
-/*
-tick
-	
-Called on every tick of the BCS software.
-Time between ticks may vary, depending on network conditions
-and underlying BCS software. If timing is important, calculate
-it yourself.
-*/
-BCSi.prototype.tick = function () {
-	// console.log('tick', Date.now(), this);
-};
-	
-/*
-Initialize
-*/
-context = new BCSi();
-// console.log('new BCSi', Date.now(), context);
+	var bcs;
 
-/*
-Set globals for BCS usage
-*/
-externalJS = function () {
-	context.tick.call(context);
-};
-externalJSloading = 0;
+	/*
+	Create BCSi object
+	*/
+	var BCSi = function () {};
 	
+	/*
+	tick
+	
+	Called on every tick of the BCS software.
+	Time between ticks will vary, depending on network conditions
+	and underlying BCS software. If timing is important, calculate
+	it yourself.
+	*/
+	BCSi.prototype.tick = function () {
+		// console.log('tick', Date.now(), this);
+	};
+
+	/*
+	Register with device.
+	*/
+	!function () {
+		// tick notification
+		externalJS = function () { bcs.tick.call(bcs); };
+		// load complete
+		externalJSloading = 0;
+	}(bcs = new BCSi());
 }();
