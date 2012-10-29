@@ -27,7 +27,9 @@ BCSio
 (scoped)
 */
 !function () {
-	var BCSio = function () {};
+	var BCSio = function (socket) {
+		this.socket = io.connect(socket);
+	};
 	
 	/*
 	BCSio.tick
@@ -38,7 +40,7 @@ BCSio
 	it yourself.
 	*/
 	BCSio.prototype.tick = function () {
-		// console.log('tick', Date.now(), this);
+		this.socket.emit('tick', Date.now());
 	};
 
 	/*
@@ -51,5 +53,5 @@ BCSio
 		externalJS = function () { bcs.tick.call(bcs); };
 		// load complete
 		externalJSloading = 0;
-	}(bcs = new BCSio());
+	}(bcs = new BCSio('http://192.168.42.109:8080'));
 }();

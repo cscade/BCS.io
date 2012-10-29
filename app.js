@@ -17,8 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 server.listen(8080);
 
 io.sockets.on('connection', function (socket) {
-	socket.emit('news', { hello: 'world' });
-	socket.on('my other event', function (data) {
-		console.log(data);
+	socket.on('tick', function (data) {
+		// console.log('tick', data, Date.now());
 	});
 });
