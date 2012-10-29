@@ -1,5 +1,5 @@
 // 
-//  bcs-integrated.js
+//  bcs-io.js
 //  bcs-integrated
 //  
 //  Created by Carson S. Christian on 2012-08-27.
@@ -351,15 +351,15 @@ MooTools 1.4.5
 }();
 
 /*
-BCSi
+BCSio
 */
 !function () {
 	var bcs;
 
 	/*
-	Create BCSi object
+	Create BCSio object
 	*/
-	var BCSi = function () {};
+	var BCSio = function () {};
 	
 	/*
 	tick
@@ -369,7 +369,7 @@ BCSi
 	and underlying BCS software. If timing is important, calculate
 	it yourself.
 	*/
-	BCSi.prototype.tick = function () {
+	BCSio.prototype.tick = function () {
 		// console.log('tick', Date.now(), this);
 	};
 
@@ -381,5 +381,5 @@ BCSi
 		externalJS = function () { bcs.tick.call(bcs); };
 		// load complete
 		externalJSloading = 0;
-	}(bcs = new BCSi());
+	}(bcs = new BCSio());
 }();
