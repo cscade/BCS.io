@@ -12,7 +12,7 @@ Please note that although functional, this library is only just getting started.
 
 ## Usage
 
-Clone the repository onto a system with node.js. Run `npm install` to install the required dependencies. Change the URL strings in the source to your development IP. Run the node.js application. In the BCS settings, enter `http://yourip:8080/bcs.io.js` in the Advanced Interface Customizaion field.
+Clone the repository onto a system with node.js. Run `npm install` to install the required dependencies. Change the URL strings in the source to your development IP. Run the node.js application. In the BCS settings, enter `http://yourip:8080/bcs.io.js` in the Advanced Interface Customization field.
 
 ## Thoughts & Plans
 
